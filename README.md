@@ -1,4 +1,5 @@
 # Introduction
+
     I had learnt security information major at Academy of cryptography techniques of Vietnam. After finished college I have
 a work on some IT company with SysAdmin and currently a DevOpser role;) funny. I have planed make a C&C network for study
 very long time but I han't complete because some reasons. GhostNetwork is a Go implementation of the C&C network for study.
