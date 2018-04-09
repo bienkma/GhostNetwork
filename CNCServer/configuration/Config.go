@@ -7,7 +7,7 @@ import (
 
 type CNCConfig struct {
 	CNCAddress      string
-	CNCPort         int
+	CNCPort         string
 	DBAddress       string
 	DBName          string
 	DBPort          int
@@ -15,7 +15,10 @@ type CNCConfig struct {
 	DBPassword      string
 	DBLogMode       bool
 	DBMaxConnection int
-	Storage string
+	Storage         string
+	UseSSL			bool
+	SSLCert         string
+	SSLKey          string
 }
 
 func CNCConf() CNCConfig {

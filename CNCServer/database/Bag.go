@@ -2,7 +2,8 @@ package database
 
 import (
 	"github.com/jinzhu/gorm"
-	"GhostNetwork/CNCServer/configuration"
+
+	"github.com/bienkma/GhostNetwork/CNCServer/configuration"
 )
 
 var seeder *BotDB

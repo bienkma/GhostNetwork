@@ -23,6 +23,7 @@ $ sudo bash -c 'cat <<EOF > /etc/cnc/cnc.json
   	"DBLogMode":       "true",
   	"DBMaxConnection": 10240,
   	"Storage":         "./BOTDATA",
+  	"UseSSL":          true,
   	"SSLCert":         "/etc/ssl/server.crt",
   	"SSLKey":          "/etc/ssl/server.key"
 }
