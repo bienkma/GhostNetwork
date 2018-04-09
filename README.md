@@ -22,9 +22,9 @@ $ sudo bash -c 'cat <<EOF > /etc/cnc/cnc.json
   	"DBPassword":      "password",
   	"DBLogMode":       "true",
   	"DBMaxConnection": 10240,
-  	"Storage":          "./BOTDATA",
-  	"SSLCert":          "/etc/ssl/server.crt",
-  	"SSLKey":           "/etc/ssl/server.key"
+  	"Storage":         "./BOTDATA",
+  	"SSLCert":         "/etc/ssl/server.crt",
+  	"SSLKey":          "/etc/ssl/server.key"
 }
 EOF'
 ```
