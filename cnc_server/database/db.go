@@ -2,9 +2,10 @@ package database
 
 import (
 	"fmt"
+	"log"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"log"
 )
 
 type MySqlConfig struct {
@@ -27,6 +28,7 @@ func OpenMySQL(conf MySqlConfig) *gorm.DB {
 	if ok != nil {
 		log.Fatal(ok)
 	}
+	db.DB().SetMaxOpenConns(10240)
 	db.DB().SetMaxIdleConns(0)
 	// Init Table
 	bot := Bots{}

@@ -1,18 +1,19 @@
-package handler
+package middleware
 
 import (
-	"log"
 	"fmt"
+	"log"
 	"net/http"
 )
 
-// Function log middleware
+// LoggingMiddleware function log for program
 func LoggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(response http.ResponseWriter, request *http.Request) {
-		var schema string = "http://"
+		var schema string
 		if request.TLS != nil {
 			schema = "https://"
 		}
+		schema = "http://"
 
 		URL := schema + request.Host + request.RequestURI
 		record := fmt.Sprintf("%s %s %s", request.RemoteAddr, URL, request.UserAgent())
