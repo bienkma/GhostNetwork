@@ -7,8 +7,8 @@ import (
 
 // BotServer include into handler
 type BotServer struct {
-	db     *gorm.DB
-	config *configuration.CNCConfig
+	Db  *gorm.DB
+	Cfg configuration.CNCCfg
 }
 
 // UserAgent for Bot Server check

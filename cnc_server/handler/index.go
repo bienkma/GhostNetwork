@@ -2,13 +2,11 @@ package handler
 
 import (
 	"fmt"
-	"strings"
-
 	"net/http"
+	"strings"
 )
 
 // IndexHandler handler home page
 func IndexHandler(response http.ResponseWriter, request *http.Request) {
-	ip := strings.Split(request.RemoteAddr, ":")[0]
-	fmt.Fprintf(response, "Index visited by: %s", ip)
+	fmt.Fprintf(response, "Index visited by: %s", strings.Split(request.RemoteAddr, ":")[0])
 }

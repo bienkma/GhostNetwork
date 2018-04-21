@@ -10,10 +10,10 @@ var seeder *BotDB
 
 type BotDB struct {
 	Db     *gorm.DB
-	Config *configuration.CNCConfig
+	Config *configuration.CNCCfg
 }
 
 // Build container db for pool connection
-func Builder(db *gorm.DB, config *configuration.CNCConfig) {
+func Builder(db *gorm.DB, config *configuration.CNCCfg) {
 	seeder = &BotDB{Db: db, Config: config}
 }

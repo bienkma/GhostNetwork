@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/bienkma/GhostNetwork/cnc_server/database"
@@ -13,5 +14,10 @@ func (bigBot *BotServer) AddBot(response http.ResponseWriter, request *http.Requ
 	guid := request.GetBody
 
 	var botModel database.Bots
-	check := bigBot.db.First(botModel, "UUID=?", &guid)
+	bigBot.Db.First(botModel, "UUID=?", &guid)
+
+	if botModel.GUID != "" {
+		fmt.Fprintf(response, "Hello, %s!", botModel.GPU)
+	}
+	fmt.Fprintf(response, "Not Found!")
 }
